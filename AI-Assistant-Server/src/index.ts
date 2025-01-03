@@ -21,7 +21,7 @@ const corsOptions = {
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "AI-Assistant-Client/dist")));
+app.use(express.static(path.join(__dirname, "../AI-Assistant-Client/dist")));
 
 
 app.post("/grammarCheck", async (req: Request, res: Response): Promise<any> => {
@@ -44,7 +44,9 @@ app.post("/grammarCheck", async (req: Request, res: Response): Promise<any> => {
 });
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "AI-Assistant-Client/dist", "index.html"));
+  res.sendFile(
+    path.join(__dirname, "../AI-Assistant-Client/dist", "index.html")
+  );
 });
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
