@@ -16,6 +16,7 @@ import { ProcessedFileEditor } from './library/components/ProcessedFileEditor';
 import { Slide, toast, ToastContainer } from 'react-toastify';
 
 function App() {
+  const baseUrl = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
   const [file, setFile] = useState<File | null>(null);
   const [pdfUrl, setPdfUrl] = useState<string | null>(null);
   const [contentType, setContentType] = useState<any>(null);
@@ -86,7 +87,7 @@ function App() {
       if (processedFile) {
         setLoading(true);
         try {
-          const response = await axios.post("http://localhost:3000/grammarCheck", {
+          const response = await axios.post(`${baseUrl}/grammarCheck`, {
             value: processedFile,
           });
 
