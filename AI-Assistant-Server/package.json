@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node dist/index.js",
     "build": "tsc",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "postinstall": "if [ $NODE_ENV = 'production' ]; then npm install --only=dev; fi"
   },
   "keywords": [],
   "author": "",
