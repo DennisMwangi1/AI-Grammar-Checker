@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import viteLogo from "./assets/vite.svg";
 import "./theme/App.css";
 import { preProcessTXTFile } from "./library/util/preProcessing/PreProcessTXTFunction";
 import { preProcessDOCXFile } from "./library/util/preProcessing/PreProcessDOCXFunction";
