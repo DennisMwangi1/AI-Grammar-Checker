@@ -9,7 +9,8 @@ export default withMT({
   theme: {
     extend: {
       animation: {
-        spin: 'spin 20s linear infinite', // Slower spin (3s duration)
+        spin: 'spin 20s linear infinite',
+        spinFast: 'spin 2s linear infinite',
       },
     },
   },

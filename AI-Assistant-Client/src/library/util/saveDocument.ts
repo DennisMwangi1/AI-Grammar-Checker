@@ -51,9 +51,6 @@ export const saveDocument = async (documentContent: string, fileType: string) =>
             fileType === "application/pdf" ? "pdf" : "docx"
           }`;
           link.click();
-
-            console.log("Document saved successfully:", downloadUrl);
-            window.location.reload();
         } catch (error) {
             console.error("Error saving document:", error);
         }

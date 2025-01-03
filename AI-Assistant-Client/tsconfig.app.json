@@ -8,7 +8,6 @@
     "skipLibCheck": true,
     "types": [
       "@testing-library/jest-dom",
-      "./custom.d.ts"
     ],
 
     /* Bundler mode */

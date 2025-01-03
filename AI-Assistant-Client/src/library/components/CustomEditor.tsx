@@ -136,6 +136,7 @@ const SuggestionSystem: React.FC<SuggestionSystemProps> = ({ content, errorData:
                 <div className="space-y-4">{renderContentWithSuggestions()}</div>
             </div>
             {renderModal()}
+            <div className='flex justify-between place-items-center'>
             <div className="relative inline-block mt-4">
                 <button
                     onMouseEnter={() => setIsHovered(true)}
@@ -143,7 +144,7 @@ const SuggestionSystem: React.FC<SuggestionSystemProps> = ({ content, errorData:
                     onClick={() => saveDocument(documentContent, fileType)}
                     className={`${disableSaveButton
                             ? "bg-gray-400 font-bold py-2 px-4 rounded cursor-not-allowed"
-                            : "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                            : "bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded"
                         }`}
                 >
                     Save Document
@@ -153,6 +154,12 @@ const SuggestionSystem: React.FC<SuggestionSystemProps> = ({ content, errorData:
                         Please fix all errors
                     </div>
                 )}
+            </div>
+            <button className='inline-block'>
+                <a href="/" className="bg-blue-700 hover:bg-blue-900 text-white font-bold  py-2 px-4 rounded">
+                    Back to Homepage
+                </a>
+                </button>
             </div>
         </div>
     );

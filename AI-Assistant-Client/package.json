@@ -17,7 +17,6 @@
     "axios": "^1.7.9",
     "convertapi-js": "~1.1",
     "draft-js": "^0.11.7",
-    "ldrs": "^1.0.2",
     "mammoth": "^1.9.0",
     "react": "^18.3.1",
     "react-contenteditable": "^3.3.7",
