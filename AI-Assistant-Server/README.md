@@ -26,7 +26,7 @@ Requirements
 Installation
 ------------
 
-1. git clone <https://github.com/your-repo/grammar-check-api.git>
+1. git clone  [<https://github.com/DennisMwangi1/AI-Grammar-Checker>](https://github.com/DennisMwangi1/AI-Grammar-Checker)
 
 2. cd AI-Assistant-Server
 
