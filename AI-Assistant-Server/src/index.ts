@@ -4,7 +4,6 @@ import cors from "cors";
 import { fetchGrammarCheck } from './utils/fetchGrammarCheck';
 import { formatGrammarErrors } from './utils/formatGrammarErrors';
 import { validateInput } from './utils/validateInput';
-const path = require("path");
 
 dotenv.config();
 const app = express();
@@ -21,7 +20,6 @@ const corsOptions = {
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "../AI-Assistant-Client/dist")));
 
 
 app.post("/grammarCheck", async (req: Request, res: Response): Promise<any> => {
@@ -43,11 +41,6 @@ app.post("/grammarCheck", async (req: Request, res: Response): Promise<any> => {
   return res.status(apiResponse.status).json(apiResponse.data);
 });
 
-app.get("*", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "../AI-Assistant-Client/dist", "index.html")
-  );
-});
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
