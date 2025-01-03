@@ -10,10 +10,7 @@ const app = express();
 const PORT = process.env.PORT ?? 3000;
 
 const corsOptions = {
-  origin:
-    process.env.NODE_ENV === "production"
-      ? "https://ai-grammar-check.netlify.app"
-      : "http://localhost:5173",
+  origin:"https://ai-grammar-check.netlify.app",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   preflightContinue: false,
   optionsSuccessStatus: 204,
