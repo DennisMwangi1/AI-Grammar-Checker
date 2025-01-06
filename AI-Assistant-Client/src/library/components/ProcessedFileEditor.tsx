@@ -1,6 +1,5 @@
 import { SuggestionSystemProps } from '../../types/propTypes';
 import SuggestionSystem from './CustomEditor';
-import RichTextEditorWithSuggestions from './RichTextEditor';
 
 /**
  * ProcessedFileEditor component. This component takes in the processedFile string, errorData array, and fileType string, and renders a div with a SuggestionSystem component inside of it.
