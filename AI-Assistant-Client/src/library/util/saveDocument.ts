@@ -4,7 +4,6 @@ export const saveDocument = async (
   documentContent: string,
   fileType: string
 ) => {
-  console.log(documentContent, fileType);
   try {
     const convertApiKey = import.meta.env.VITE_CONVERT_API_KEY; // Store your ConvertAPI key
     const convertApi = ConvertApi.auth(convertApiKey || "");
@@ -39,7 +38,6 @@ export const saveDocument = async (
         link.href = downloadUrl;
         link.download = "document.txt";
         link.click();
-        console.log("Plain text document saved.");
         return;
       }
 
@@ -47,7 +45,6 @@ export const saveDocument = async (
         console.error("Unsupported file type.");
         return;
     }
-    console.log(result);
     const downloadUrl = result.files[0].Url;
     const link = document.createElement("a");
     link.href = downloadUrl;

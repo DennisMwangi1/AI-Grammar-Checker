@@ -1,0 +1,42 @@
+name: CI/CD Pipeline for Client and Server
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  client:
+   name: Client
+   runs-on: ubuntu-latest
+   steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - name: Navigate to Client Folder
+      working-directory: ./AI-Assistant-Client
+      run: echo "Inside Client Directory"
+
+    - name: Install Client Dependencies
+      working-directory: ./AI-Assistant-Client
+      run: npm install
+
+    - name: Lint Client Code
+      working-directory: ./AI-Assistant-Client
+      run: npm run lint
+
+    - name: Run Client Unit Tests
+      working-directory: ./AI-Assistant-Client
+      run: npm test
+
+    - name: Build Client
+      working-directory: ./AI-Assistant-Client
+      run: npm run build

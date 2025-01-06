@@ -25,7 +25,6 @@ export const convertPdfToHtmlWithMammoth = async (
     const mammothResult = await mammoth.convertToHtml({
       arrayBuffer: docxArrayBuffer,
     });
-    console.log("Extracted HTML:", mammothResult.value);
 
     return mammothResult.value;
   } catch (error) {

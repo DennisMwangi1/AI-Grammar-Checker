@@ -8,7 +8,6 @@ import RichTextEditorWithSuggestions from './RichTextEditor';
  * @returns {JSX.Element}
  */
 export const ProcessedFileEditor = ({ content, errorData, fileType }: SuggestionSystemProps) => {
-    console.log(content, errorData, fileType);
     return (
         content && errorData && fileType ? (
             <div className="overflow-auto border text-black bg-white ">

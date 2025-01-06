@@ -79,7 +79,6 @@ const SuggestionSystem: React.FC<SuggestionSystemProps> = ({ content, errorData:
 
             currentIndex = end;
         });
-        console.log(documentContent);
         if (currentIndex < documentContent.length) {
             const remainingText = sanitizeHtml(documentContent.slice(currentIndex));
             parts.push(

@@ -75,7 +75,6 @@ function App() {
       const strippedFile = stripHtml(processedFile);
       setProcessedFile(strippedFile);
     } catch (error) {
-      console.log('here');
       setFetchError(true);
       setFetchErrorMessage("An error occurred while processing the file.");
     } finally {
@@ -84,7 +83,6 @@ function App() {
   };
 
   useEffect(() => {
-    console.log('errorData: ', errorData);
     const grammarCheck = async () => {
       if (processedFile) {
         setLoading(true);
@@ -100,7 +98,6 @@ function App() {
             setFetchErrorMessage(response.data);
           }
         } catch (error: any) {
-          console.log('here it is');
           setFetchError(true);
           setFetchErrorMessage(error.response?.data || "An error occurred during grammar check.");
         } finally {
