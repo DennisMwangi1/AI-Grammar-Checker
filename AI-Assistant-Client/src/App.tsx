@@ -14,9 +14,10 @@ import { FileDropzone } from './library/components/FileDropzone';
 import { DocumentViewer } from './library/components/DocumentViewer';
 import { ProcessedFileEditor } from './library/components/ProcessedFileEditor';
 import { Slide, toast, ToastContainer } from 'react-toastify';
+import { stripHtml } from './library/util/stripHtml';
 
 function App() {
-  const baseUrl = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
+  const baseUrl = "http://localhost:3000";
   const [file, setFile] = useState<File | null>(null);
   const [pdfUrl, setPdfUrl] = useState<string | null>(null);
   const [contentType, setContentType] = useState<any>(null);
@@ -71,7 +72,8 @@ function App() {
 
       setContentType(result);
       const processedFile = await processFile(file);
-      setProcessedFile(processedFile);
+      const strippedFile = stripHtml(processedFile);
+      setProcessedFile(strippedFile);
     } catch (error) {
       console.log('here');
       setFetchError(true);
