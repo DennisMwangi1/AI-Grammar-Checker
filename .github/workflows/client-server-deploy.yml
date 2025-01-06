@@ -10,7 +10,7 @@ on:
 
 jobs:
   client:
-   name: Client
+   name: AI-Assistant_client
    runs-on: ubuntu-latest
    steps:
     - name: Checkout Code
@@ -40,3 +40,16 @@ jobs:
     - name: Build Client
       working-directory: ./AI-Assistant-Client
       run: npm run build
+
+    - name: Install Netlify
+      working-directory: ./AI-Assistant-Client
+      run: npm install netlify-cli@17.10.1 -g
+
+    - name: Deploy Client to Netlify
+      id: netlify_deploy
+      working-directory: ./AI-Assistant-Client
+      run: |
+        netlify deploy \
+            --dir dist \
+            --site ${{ secrets.NETLIFY_SITE_ID }} \
+            --auth ${{ secrets.NETLIFY_API_TOKEN }} \
