@@ -31,6 +31,6 @@ describe("DocumentViewer Component", () => {
 
         expect(div).toBeInTheDocument();
         expect(div).toHaveClass("overflow-auto");
-        expect(div?.innerHTML).toBe('<div></div>');
+        expect(div?.innerHTML).toBe('<h3 class="text-3xl font-semibold mb-6 text-center text-gray-800 border-b-2 border-gray-300 pb-2">Original Version of test.txt</h3><div></div>');
     });
 });
