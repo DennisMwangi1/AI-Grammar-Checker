@@ -50,6 +50,7 @@ jobs:
       working-directory: ./AI-Assistant-Client
       run: |
         netlify deploy \
-            --dir dist \
-            --site ${{ secrets.NETLIFY_SITE_ID }} \
-            --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} \
+          --dir dist \
+          --site ${{ secrets.NETLIFY_SITE_ID }} \
+          --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} \
+          --prod
