@@ -54,3 +54,31 @@ jobs:
           --site ${{ secrets.NETLIFY_SITE_ID }} \
           --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} \
           --prod
+
+  server:
+    name: AI-Assistant_server
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+
+    - name: Navigate to Server Folder
+      working-directory: ./AI-Assistant-Server
+      run: echo "Inside Server Directory"
+
+    - name: Install Server Dependencies
+      working-directory: ./AI-Assistant-Server
+      run: npm install
+
+    - name: Deploy to render
+      working-directory: ./AI-Assistant-Server
+      run: |
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{"serviceId": "${{ secrets.RENDER_SERVICE_ID }}"}' \
+            https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploy
+        

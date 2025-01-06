@@ -17,7 +17,7 @@ import { Slide, toast, ToastContainer } from 'react-toastify';
 import { stripHtml } from './library/util/stripHtml';
 
 function App() {
-  const baseUrl = "http://localhost:3000";
+  const baseUrl = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
   const [file, setFile] = useState<File | null>(null);
   const [pdfUrl, setPdfUrl] = useState<string | null>(null);
   const [contentType, setContentType] = useState<any>(null);

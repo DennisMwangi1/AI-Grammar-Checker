@@ -20,7 +20,7 @@ import { normalizeText } from '../util/normalizeText';
 
 const RichTextEditorWithSuggestions: React.FC<SuggestionSystemProps> = ({ content, errorData: initialErrorData, fileType }) => {
   const editor = useMemo(() => withReact(createEditor()), []);
-  const baseUrl = "http://localhost:3000";
+  const baseUrl = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
   const initialValue = useMemo(
     () => [{ type: "paragraph", children: [{ text: content }] }],
     [content]
