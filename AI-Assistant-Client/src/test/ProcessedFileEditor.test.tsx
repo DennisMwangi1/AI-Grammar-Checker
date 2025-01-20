@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 import { ProcessedFileEditor } from '../library/components/ProcessedFileEditor';
-import SuggestionSystem from '../library/components/CustomEditor';
+import RichTextEditorWithSuggestions from '../library/components/RichTextEditor';
 import { describe, it, expect, vi } from 'vitest';
 import { ErrorData } from '../types/propTypes';
 
-vi.mock('../library/components/CustomEditor', () => ({
+vi.mock('../library/components/RichTextEditor', () => ({
     default: vi.fn(() => null),
 }));
 
@@ -22,7 +22,7 @@ describe('ProcessedFileEditor', () => {
             />
         );
 
-        expect(SuggestionSystem).toHaveBeenCalledWith(
+        expect(RichTextEditorWithSuggestions).toHaveBeenCalledWith(
             expect.objectContaining({
                 content: mockProcessedFile,
                 errorData: mockErrorData,

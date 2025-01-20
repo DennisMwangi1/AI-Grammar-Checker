@@ -198,11 +198,9 @@ const RichTextEditorWithSuggestions: React.FC<SuggestionSystemProps> = ({ conten
    * @param {string} fileType - The file type to save the document as.
    */
   const handleSaveDocument = (value: any, fileType: string) => {
-    setIsSaving(true);
     const text = value[0].children[0].text || "";
     const normalizedText = normalizeText(text);
     saveDocument(normalizedText, fileType).then(() => {
-      setIsSaving(false);
     });
   };
 
