@@ -11,7 +11,7 @@ export const ProcessedFileEditor = ({ content, errorData, fileType }: Suggestion
     return (
         content && errorData && fileType ? (
             <div className="overflow-auto border text-black bg-white ">
-                {/* TODO: This is a template implementation */}
+                {/* This is a template implementation */}
                 {/* <SuggestionSystem content={content} errorData={errorData} fileType={fileType} /> */}
                 <RichTextEditorWithSuggestions content={content} errorData={errorData} fileType={fileType} />
             </div>
