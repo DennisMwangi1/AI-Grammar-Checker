@@ -31,7 +31,6 @@ const RichTextEditorWithSuggestions: React.FC<SuggestionSystemProps> = ({ conten
   const [activeErrorIndex, setActiveErrorIndex] = useState<number | null>(null);
   const [disableSaveButton, setDisableSaveButton] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
-  const [isSaving, setIsSaving] = useState(false);
   const [isUpdating, setIsUpdating] = useState(false);
 
   const [debouncedValue] = useDebounce(value as any, 500);
@@ -73,7 +72,7 @@ const RichTextEditorWithSuggestions: React.FC<SuggestionSystemProps> = ({ conten
     if (text) {
       grammarCheck();
     }
-  }, [debouncedValue]);
+  }, [debouncedValue, baseUrl]);
 
   useEffect(() => {
     setDisableSaveButton(errorData.length > 0);
@@ -250,11 +249,11 @@ const RichTextEditorWithSuggestions: React.FC<SuggestionSystemProps> = ({ conten
 
   return (
     <div className="p-6 relative">
-      {isUpdating || isSaving && (
+      {isUpdating && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center"
           aria-labelledby="updating-modal-title"
-          aria-hidden={!isUpdating || !isSaving}
+          aria-hidden={!isUpdating}
         >
           <div className="bg-white p-6 rounded shadow-lg text-center">
             <h2 id="updating-modal-title" className="text-lg font-bold mb-4">

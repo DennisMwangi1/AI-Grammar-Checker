@@ -1,5 +1,4 @@
 import { SuggestionSystemProps } from '../../types/propTypes';
-import SuggestionSystem from './CustomEditor';
 import RichTextEditorWithSuggestions from './RichTextEditor';
 
 /**
